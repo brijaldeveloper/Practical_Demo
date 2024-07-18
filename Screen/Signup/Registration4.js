@@ -48,8 +48,12 @@ export default function Registration4({ navigation }) {
 
   submitData=()=>{
     const UpdateArray=eventList.filter((item)=>item.isEnable==true)
+    if(UpdateArray.length!=0){
     setForm({ ...form, eventSource: UpdateArray }) 
-    navigation.navigate("EventView")
+      navigation.navigate("EventView")
+    }else{
+      alert("Please Select Event.")
+    }
   }
 
   return (

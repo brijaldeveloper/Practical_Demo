@@ -25,8 +25,12 @@ export default function Registration2({ navigation }) {
   }, []);
 
   submitData=()=>{
+    if(jobTitleData!=""){
     setForm({ ...form, jobTitle: jobTitleData }) 
-    navigation.navigate("Registration3")
+      navigation.navigate("Registration3")
+    }else{
+      alert("Please enter Job title.")
+    }
   }
   return (
     <View style={styles.container}>

@@ -26,8 +26,12 @@ export default function Registration1({ navigation }) {
   }, []);
 
   submitData=()=>{
-    setForm({ ...form, company: companyName }) 
-    navigation.navigate("Registration2")
+    if(companyName!=""){
+      setForm({ ...form, company: companyName }) 
+      navigation.navigate("Registration2")
+    }else{
+      alert("Please enter Company name.")
+    }
   }
 
   return (
